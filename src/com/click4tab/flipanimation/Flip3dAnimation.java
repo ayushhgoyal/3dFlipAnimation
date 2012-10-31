@@ -41,6 +41,8 @@ public class Flip3dAnimation extends Animation {
 
 		camera.save();
 
+		
+//		In case of Vertical use rotateX, while for horizontal rotateY
 		camera.rotateY(degrees);
 
 		camera.getMatrix(matrix);

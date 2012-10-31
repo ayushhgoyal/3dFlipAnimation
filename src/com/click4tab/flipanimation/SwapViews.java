@@ -27,16 +27,16 @@ public final class SwapViews implements Runnable {
 			image2.setVisibility(View.VISIBLE);
 			image2.requestFocus();
 
-			rotation = new Flip3dAnimation(-90, 0, centerX, centerY);
+			rotation = new Flip3dAnimation(90, 0, centerX, centerY);
 		} else {
 			image2.setVisibility(View.GONE);
 			image1.setVisibility(View.VISIBLE);
 			image1.requestFocus();
 
-			rotation = new Flip3dAnimation(90, 0, centerX, centerY);
+			rotation = new Flip3dAnimation(-90, 0, centerX, centerY);
 		}
 
-		rotation.setDuration(500);
+		rotation.setDuration(100);
 		rotation.setFillAfter(true);
 		rotation.setInterpolator(new DecelerateInterpolator());
 

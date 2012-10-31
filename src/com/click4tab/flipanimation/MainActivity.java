@@ -12,7 +12,7 @@ public class MainActivity extends Activity {
 
 	private TextView image1;
 	private TextView image2;
-
+	boolean clickable = true;
 	private boolean isFirstImage = true;
 
 	/** Called when the activity is first created. */
@@ -33,11 +33,12 @@ public class MainActivity extends Activity {
 		image1.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
 				if (isFirstImage) {
-					applyRotation(0, 90);
+
+					applyRotation(0, -90);
 					isFirstImage = !isFirstImage;
 
 				} else {
-					applyRotation(0, -90);
+					applyRotation(0, 90);
 					isFirstImage = !isFirstImage;
 				}
 			}
@@ -46,8 +47,8 @@ public class MainActivity extends Activity {
 
 	private void applyRotation(float start, float end) {
 		// Find the center of image
-		 final float centerX = image1.getWidth() / 2.0f;
-		 final float centerY = image1.getHeight() / 2.0f;
+		final float centerX = image1.getWidth() / 2.0f;
+		final float centerY = image1.getHeight() / 2.0f;
 
 		// Create a new 3D rotation with the supplied parameter
 		// The animation listener is used to trigger the next animation
