@@ -5,15 +5,15 @@ import android.graphics.Matrix;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-public class Flip3dAnimation extends Animation {
+public class Flip3dAnimationVertical extends Animation {
 	private final float mFromDegrees;
 	private final float mToDegrees;
 	private final float mCenterX;
 	private final float mCenterY;
 	private Camera mCamera;
 
-	public Flip3dAnimation(float fromDegrees, float toDegrees, float centerX,
-			float centerY) {
+	public Flip3dAnimationVertical(float fromDegrees, float toDegrees,
+			float centerX, float centerY) {
 		mFromDegrees = fromDegrees;
 		mToDegrees = toDegrees;
 		mCenterX = centerX;
@@ -42,7 +42,7 @@ public class Flip3dAnimation extends Animation {
 		camera.save();
 
 		// In case of Vertical use rotateX, while for horizontal rotateY
-		camera.rotateY(degrees);
+		camera.rotateX(degrees);
 
 		camera.getMatrix(matrix);
 		camera.restore();
